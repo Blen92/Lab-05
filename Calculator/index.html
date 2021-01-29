@@ -17,64 +17,67 @@
 
     <div class="container bg-dark">
         <div class="row">
-            <div class="col display align-bottom"> <h1>0</h1></div>
+            <div class="col display align-bottom">
+                <div id="history"><p id="previous-operand"></p></div>
+                <div id="output"><p id="current-operand"></p></div>
+            </div>
         </div>
         
         <div class="">
             <div class="row my-4">
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">7</button>
+                    <button type="button" class="btn btn-secondary number" id="7">7</button>
                 </div>
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">8</button>
+                    <button type="button" class="btn btn-secondary number"id="8">8</button>
                 </div>
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">9</button>
+                    <button type="button" class="btn btn-secondary number" id="9">9</button>
                 </div>
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary">+</button>
-                </div>
-            </div>
-            <div class="row my-4">
-                <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">4</button>
-                </div>
-                <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">5</button>
-                </div>
-                <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">6</button>
-                </div>
-                <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">-</button>
+                    <button type="button" class="btn btn-primary operator "id="+">+</button>
                 </div>
             </div>
             <div class="row my-4">
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">1</button>
+                    <button type="button" class="btn btn-secondary number"id="4">4</button>
                 </div>
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">2</button>
+                    <button type="button" class="btn btn-secondary number"id="5">5</button>
                 </div>
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">3</button>
+                    <button type="button" class="btn btn-secondary number"id="6">6</button>
                 </div>
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">X</button>
+                    <button type="button" class="btn btn-primary operator"id="-">-</button>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-3">
+                    <button type="button" class="btn btn-secondary number"id="1">1</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" class="btn btn-secondary number"id="2">2</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" class="btn btn-secondary number"id="3">3</button>
+                </div>
+                <div class="col-3">
+                    <button type="button" class="btn btn-primary operator"id="*">x</button>
                 </div>
             </div>
             <div class="row my-4">
                 <div class="col-3 mb-4">
-                    <button type="button" class="btn btn-secondary ">C</button>
+                    <button type="button" class="btn btn-danger operator"id="clear">C</button>
                 </div>
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">0</button>
+                    <button type="button" class="btn btn-success operator" id="=">=</button>
                 </div>
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">=</button>
+                    <button type="button" class="btn btn-secondary number" id="0">0</button>
                 </div>
                 <div class="col-3">
-                    <button type="button" class="btn btn-secondary ">/</button>
+                    <button type="button" class="btn btn-primary operator"id="/">/</button>
                 </div>
         </div>
         </div>
