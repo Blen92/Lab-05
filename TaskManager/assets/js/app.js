@@ -4,8 +4,9 @@ const form = document.querySelector('#task-form'); //The form at the top
 const filter = document.querySelector('#filter'); //the task filter text field
 const taskList = document.querySelector('.collection'); //The UL
 const clearBtn = document.querySelector('.clear-tasks'); //the all task clear button
-
 const reloadIcon = document.querySelector('.fa'); //the reload button at the top navigation 
+const ascend = document.querySelector("#ascend");
+const descend = document.querySelector("#descend");
 
 var input = [];
 // Add Event Listener  [Form , clearBtn and filter search input ]
@@ -20,7 +21,9 @@ filter.addEventListener('keyup', filterTasks);
 taskList.addEventListener('click', removeTask);
 // Event Listener for reload 
 reloadIcon.addEventListener('click', reloadPage);
+ascend.addEventListener("click", ascending);
 
+descend.addEventListener("click", descending);
 
 
 
@@ -124,4 +127,47 @@ function removeTask(e) {
 function reloadPage() {
     //using the reload fun on location object 
     location.reload();
+}
+function ascending() {
+    var lis = taskList.children;
+
+    for (let index = 0; index < lis.length; index++) {
+        lis[index].style.display = "none";
+    }
+
+    for (let index = 0; index < input.length; index++) {
+        const li = document.createElement("li");
+        li.className = "collection-item";
+        li.appendChild(document.createTextNode(input[index].textContent));
+        const link = document.createElement("a");
+        link.innerHTML = '<i class="fa fa-remove"></i>';
+        link.className = "delete-item secondary-content";
+        li.appendChild(link);
+
+        if (taskList == "") {
+            taskList.appendChild(li);
+        } else {
+            taskList.insertBefore(li, taskList.firstElementChild);
+        }
+    }
+}
+
+function descending() {
+    var lis = taskList.children;
+
+    for (let index = 0; index < lis.length; index++) {
+        lis[index].style.display = "none";
+    }
+
+    for (let index = 0; index < input.length; index++) {
+        const li = document.createElement("li");
+        li.className = "collection-item";
+        li.appendChild(document.createTextNode(input[index].textContent));
+        const link = document.createElement("a");
+        link.innerHTML = '<i class="fa fa-remove"></i>';
+        link.className = "delete-item secondary-content";
+        li.appendChild(link);
+
+        taskList.appendChild(li);
+    }
 }
