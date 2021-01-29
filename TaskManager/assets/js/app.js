@@ -1,4 +1,4 @@
-// Define UI Variables
+// Define UI Variables 
 const taskInput = document.querySelector('#task'); //the task input text field
 const form = document.querySelector('#task-form'); //The form at the top
 const filter = document.querySelector('#filter'); //the task filter text field
@@ -7,6 +7,7 @@ const clearBtn = document.querySelector('.clear-tasks'); //the all task clear bu
 
 const reloadIcon = document.querySelector('.fa'); //the reload button at the top navigation 
 
+var input = [];
 // Add Event Listener  [Form , clearBtn and filter search input ]
 
 // form submit 
@@ -51,10 +52,15 @@ function addNewTask(e) {
     // Append link to li
     li.appendChild(link);
     // Append to UL 
-    taskList.appendChild(li);
+    if (taskList == "") {
+        taskList.appendChild(li);
+    } else {
+        taskList.insertBefore(li, taskList.firstElementChild);
+    }
 
-
-
+    taskInput.value = "";
+    text = { textContent: li.textContent };
+    input.push(text);
 
 }
 
@@ -72,26 +78,33 @@ function clearAllTasks() {
     while (taskList.firstChild) {
         taskList.removeChild(taskList.firstChild);
     }
+    input = []
 
 }
-
-
 
 // Filter tasks function definition 
 function filterTasks(e) {
 
     /*  
     Instruction for Handling the Search/filter 
-
+    
     1. Receive the user input from the text input 
     2. Assign it to a variable so the us can reuse it 
     3. Use the querySelectorAll() in order to get the collection of li which have  .collection-item class 
     4. Iterate over the collection item Node List using forEach
     5. On each element check if the textContent of the li contains the text from User Input  [can use indexOf]
     6 . If it contains , change the display content of the element as block , else none
-
-
+    
     */
+    let _filter = filter.value;
+    let y = document.querySelectorAll(".collection-item");
+    y.forEach((item) => {
+        if (item.textContent.indexOf(_filter)) {
+            item.style.display = "none";
+        } else {
+            item.style.display = "block";
+        }
+    });
 
 }
 
